@@ -11,7 +11,7 @@ A real-time collaborative whiteboard web application built using **React**, **Ty
 - Only authenticated users can access whiteboard sessions.
 - Routes protected using a `PrivateRoute` wrapper with `@react-keycloak/web`.
 
-### 🖥️ Project Setup
+###  Project Setup
 - Clean React + TypeScript base.
 - Bootstrap 5.0 for modern, responsive, professional UI styling.
 - Codebase organized with modular folder structure.
