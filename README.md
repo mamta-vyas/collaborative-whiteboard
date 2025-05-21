@@ -1,54 +1,83 @@
-# React + TypeScript + Vite
+# Collaborative Whiteboard - Dendrite.ai Frontend Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time collaborative whiteboard web application built using **React**, **TypeScript**, **Bootstrap 5**, **Keycloak (for authentication)**, and **WebSockets** (for real-time sync).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features Implemented
 
-## Expanding the ESLint configuration
+###  Authentication
+- Secure user authentication with **Keycloak** via Docker container.
+- Only authenticated users can access whiteboard sessions.
+- Routes protected using a `PrivateRoute` wrapper with `@react-keycloak/web`.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🖥️ Project Setup
+- Clean React + TypeScript base.
+- Bootstrap 5.0 for modern, responsive, professional UI styling.
+- Codebase organized with modular folder structure.
+- Type-safe and clean architecture.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+##  Upcoming Features (In Progress)
+-  Drawing on whiteboard with brush tools (Konva.js).
+-  Color and brush size selection.
+-  Undo/Redo support.
+-  Real-time drawing collaboration using WebSockets.
+-  Display connected users’ cursors in real time.
+-  Export canvas as image or PDF.
+-  (Bonus) Live chat while collaborating.
+-  (Bonus) Invite others to whiteboard session via email.
+-  (Bonus) Export session as drawing playback video.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+##  Tech Stack
+
+| Layer         | Technology                      |
+|---------------|----------------------------------|
+| Frontend      | React, TypeScript               |
+| Auth          | Keycloak (Docker)               |
+| UI Framework  | Bootstrap 5                     |
+| Real-Time     | WebSocket / Socket.IO (planned) |
+| Canvas Drawing| Konva.js (planned)              |
+
+---
+
+##  How to Run Locally
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/collaborative-whiteboard.git
+cd collaborative-whiteboard
+2. Install frontend dependencies
+
+npm install
+3. Start Keycloak in Docker
+Ensure Docker is installed, then run:
+
+
+docker compose up -d
+Keycloak will run at http://localhost:8080
+
+4. Start the React App
+
+npm run dev
+Screenshots
+Screenshots of the UI are available in the screenshots/ folder.
+
+Folder Structure (Frontend)
+
+src/
+│
+├── components/         # Reusable components like PrivateRoute
+├── pages/              # Page views like Whiteboard, Login
+├── App.tsx             # Routing and layout
+├── index.tsx           # Entry point
+
+Author
+Name: Mamta Vyas
+
+Role: Frontend Developer Applicant
+
+Email: mamtavyas1990@gmail.com
